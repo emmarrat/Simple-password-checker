@@ -17,7 +17,7 @@ const PassChecker = () => {
   }
   if (passStatus !== null) {
     displayContent = <div
-      className={passStatus ? "correct display" : "wrong display"}>{passStatus ? 'Correct password!' : 'Wrong password!'}</div>
+      className={passStatus ? "correct display" : "wrong display"}>{passStatus ? 'Access Granted!' : 'Access Denied!'}</div>
   }
 
   return (
