@@ -17,8 +17,11 @@ export const passCheckerSlice = createSlice({
     result: (state, action: PayloadAction<number>) => {
      state.result.push(state.digits[action.payload]);
     },
+    remove: (state) => {
+      state.result.pop();
+    }
   }
 });
 
 export const passCheckerReducer = passCheckerSlice.reducer;
-export const {result} = passCheckerSlice.actions;
+export const {result, remove} = passCheckerSlice.actions;
