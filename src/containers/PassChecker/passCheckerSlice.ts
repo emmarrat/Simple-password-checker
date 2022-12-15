@@ -19,7 +19,7 @@ export const passCheckerSlice = createSlice({
   initialState,
   reducers: {
     result: (state, action: PayloadAction<number>) => {
-      if(state.result.length < 4) {
+      if (state.result.length < 4) {
         state.result.push(state.digits[action.payload]);
       }
     },

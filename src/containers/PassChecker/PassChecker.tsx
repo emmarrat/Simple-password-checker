@@ -12,11 +12,12 @@ const PassChecker = () => {
 
   let displayContent = <div className="display">{display.map(() => '*')}</div>;
 
-  if(display.length === 0) {
+  if (display.length === 0) {
     displayContent = <div className="display">Please enter the password</div>
   }
-  if(passStatus !== null) {
-    displayContent = <div className={passStatus ? "correct display" : "wrong display"}>{passStatus ? 'Correct password!' : 'Wrong password!'}</div>
+  if (passStatus !== null) {
+    displayContent = <div
+      className={passStatus ? "correct display" : "wrong display"}>{passStatus ? 'Correct password!' : 'Wrong password!'}</div>
   }
 
   return (
@@ -24,12 +25,12 @@ const PassChecker = () => {
       {displayContent}
       <div className="buttons-wrapper">
         {digits.map((digit, index) => (
-            <div onClick={() => dispatch(result(index))} className="button" key={digit}>{digit}</div>
+          <div onClick={() => dispatch(result(index))} style={{order: digits[index]}} className="button"
+               key={digit}>{digit}</div>
         ))}
-        <div onClick={() => dispatch(remove())} className="button">remove</div>
-        <div onClick={() => dispatch(checkResult())} className="button">enter</div>
+        <div onClick={() => dispatch(remove())} className="button remove">{"<"}</div>
+        <div onClick={() => dispatch(checkResult())} className="button">E</div>
       </div>
-
     </div>
   );
 };

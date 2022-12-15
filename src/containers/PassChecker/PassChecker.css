@@ -1,11 +1,18 @@
 .pass-checker {
     width: 300px;
     border: 1px solid black;
+    border-radius: 5px;
+    padding-bottom: 10px;
+
 }
 .display {
-    padding: 10px 0;
+    padding: 15px 5px;
     border: 1px solid black;
+    border-radius: 4px;
     margin: 5px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
 }
 .buttons-wrapper {
     display: flex;
@@ -16,16 +23,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 85px;
+    width: 70px;
     height: 40px;
     border: 1px solid black;
+    border-radius: 8px;
     margin: 5px;
+    cursor: pointer;
+}
+
+.button:active {
+    box-shadow: inset 0 0 8px 2px #989595;
 }
 
 .correct {
     background: green;
+    color: white;
 }
 
 .wrong {
     background: red;
+    color: white;
+}
+
+.remove {
+    order: -1;
 }
