@@ -1,0 +1,23 @@
+.pass-checker {
+    width: 300px;
+    border: 1px solid black;
+}
+.display {
+    padding: 10px 0;
+    border: 1px solid black;
+    margin: 5px;
+}
+.buttons-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85px;
+    height: 40px;
+    border: 1px solid black;
+    margin: 5px;
+}
