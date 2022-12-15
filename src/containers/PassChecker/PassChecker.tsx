@@ -2,19 +2,21 @@ import React from 'react';
 import './PassChecker.css';
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../app/store";
-import {remove, result} from "./passCheckerSlice";
+import {checkResult, remove, result} from "./passCheckerSlice";
 
 const PassChecker = () => {
   const dispatch = useDispatch();
   const digits = useSelector((state: RootState) => state.passChecker.digits);
   const display = useSelector((state: RootState) => state.passChecker.result);
+  const passStatus = useSelector((state: RootState) => state.passChecker.checker);
 
-  console.log(display);
-
-  let displayContent = (<div className="display">{display}</div>);
+  let displayContent = <div className="display">{display.map(() => '*')}</div>;
 
   if(display.length === 0) {
     displayContent = <div className="display">Please enter the password</div>
+  }
+  if(passStatus !== null) {
+    displayContent = <div className={passStatus ? "correct display" : "wrong display"}>{passStatus ? 'Correct password!' : 'Wrong password!'}</div>
   }
 
   return (
@@ -25,7 +27,7 @@ const PassChecker = () => {
             <div onClick={() => dispatch(result(index))} className="button" key={digit}>{digit}</div>
         ))}
         <div onClick={() => dispatch(remove())} className="button">remove</div>
-        <div className="button">enter</div>
+        <div onClick={() => dispatch(checkResult())} className="button">enter</div>
       </div>
 
     </div>
