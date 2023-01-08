@@ -10,19 +10,19 @@ const PassChecker = () => {
   const display = useSelector((state: RootState) => state.passChecker.result);
   const passStatus = useSelector((state: RootState) => state.passChecker.checker);
 
-  let displayContent = <div className="display">{display.map(() => '*')}</div>;
+  let displayContent = <p className="display-text">{display.map(() => '*')}</p>;
 
   if (display.length === 0) {
-    displayContent = <div className="display">Please enter the password</div>
+    displayContent = <p className="display-text">Please enter the password</p>
   }
   if (passStatus !== null) {
-    displayContent = <div
-      className={passStatus ? "correct display" : "wrong display"}>{passStatus ? 'Access Granted!' : 'Access Denied!'}</div>
+    displayContent = <p
+      className={passStatus ? "correct display-text" : "wrong display-text"}>{passStatus ? 'Access Granted!' : 'Access Denied!'}</p>
   }
 
   return (
     <div className="pass-checker">
-      {displayContent}
+      <div className="display">{displayContent}</div>
       <div className="buttons-wrapper">
         {digits.map((digit, index) => (
           <div onClick={() => dispatch(result(index))} style={{order: digits[index]}} className="button"

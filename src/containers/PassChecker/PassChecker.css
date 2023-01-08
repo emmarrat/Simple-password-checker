@@ -1,18 +1,32 @@
+* {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+}
+
 .pass-checker {
-    width: 300px;
+    width: 250px;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 22px;
     padding-bottom: 10px;
+    background: #0F3460;
 
 }
 .display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
     padding: 15px 5px;
     border: 1px solid black;
-    border-radius: 4px;
-    margin: 5px;
-    font-weight: bold;
-    text-align: center;
+    border-radius: 22px;
+    margin: 15px;
     text-transform: uppercase;
+    background:linear-gradient(100deg, rgba(255, 255, 255, 1) 0%, rgba(148, 148, 134, 1) 79%);
+}
+.display-text {
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
 }
 .buttons-wrapper {
     display: flex;
@@ -23,12 +37,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 40px;
-    border: 1px solid black;
-    border-radius: 8px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #949486;
+    border-radius: 50%;
     margin: 5px;
     cursor: pointer;
+    background: #4B72A1;
+    color: #ffff;
 }
 
 .button:active {
@@ -36,13 +52,11 @@
 }
 
 .correct {
-    background: #06c006;
-    color: white;
+    color: #007a51;
 }
 
 .wrong {
-    background: red;
-    color: white;
+    color: #bc0c0c;
 }
 
 .remove {
