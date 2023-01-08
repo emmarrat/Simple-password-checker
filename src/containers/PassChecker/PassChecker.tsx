@@ -15,6 +15,7 @@ const PassChecker = () => {
   if (display.length === 0) {
     displayContent = <p className="display-text">Please enter the password</p>
   }
+
   if (passStatus !== null) {
     displayContent = <p
       className={passStatus ? "correct display-text" : "wrong display-text"}>{passStatus ? 'Access Granted!' : 'Access Denied!'}</p>
