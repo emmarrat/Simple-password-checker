@@ -28,8 +28,10 @@ export const passCheckerSlice = createSlice({
       state.checker = null;
     },
     checkResult: (state) => {
-      const finalResult = state.result.join('');
-      state.checker = finalResult === correctPass;
+      if(state.result.length > 0){
+        const finalResult = state.result.join('');
+        state.checker = finalResult === correctPass;
+      }
     },
   }
 });
